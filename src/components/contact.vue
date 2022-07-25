@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>컨텍트</h1>
+  <div class="contact backimg">
+    <p>Contact</p>
   </div>
 </template>
 <script>
