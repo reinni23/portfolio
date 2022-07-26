@@ -35,7 +35,7 @@
         <li :key="line" v-for="(skill, line) in skillper">
           <p class="skill-title">{{ skill.title }}</p>
           <div class="skill-graph">
-            <div class="graph-per"></div>
+            <div class="graph-per" :style="{ width: skill.percent }"></div>
             <span>{{ skill.percent }}</span>
           </div>
         </li>

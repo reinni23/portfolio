@@ -1,7 +1,6 @@
 <template>
   <div class="project backimg">
     <p>Project</p>
-  </div>
   <ul class="pr-list">
     <li>
       <div>이미지</div>
@@ -15,7 +14,9 @@
       </div>
     </li>
   </ul>
+    </div>
 </template>
+
 <script>
 export default { name: "app" };
 </script>

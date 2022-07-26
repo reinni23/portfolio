@@ -1,10 +1,13 @@
 <template>
-  <div class="contact backimg">
-    <p>Contact</p>
+  <div class="backimg">
+
   </div>
+
 </template>
 <script>
 export default { name: "app" };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
