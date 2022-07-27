@@ -17,8 +17,11 @@
         <div class="clone-title" :class="{ active: movecl }">
           <div class="clone-text">
             <h3>{{ clone.text }}</h3>
+            <p class="make-time">제작기간 : {{ clone.time }}</p>
             <div class="clone-lang">
-              <p>{{ clone.lang }}</p>
+              <p :key="list2" v-for="(lang, list2) in clone.lang">
+                {{ lang.id }}
+              </p>
             </div>
           </div>
           <div class="clone-wrap">
@@ -44,7 +47,8 @@ export default {
           imgurl: require("../assets/flowerhouse.png"),
           title: "싱그러운집",
           text: "메인페이지와 커뮤니티 페이지를 작업하였습니다. 싱그러운집 클론을 통해 Swiper의 사용법과 HTML/CSS의 기초를 다졌습니다.",
-          lang: "html/css",
+          time: "22. 2 ~ 22. 4",
+          lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
         },
         {
           imgurl: require("../assets/dcaf.png"),
@@ -92,7 +96,7 @@ export default {
 .clone-title {
   width: 100%;
   max-width: 352px;
-  height: 387px;
+  height: 410px;
   padding: 110px 30px 30px;
   box-sizing: border-box;
   background-color: #eebbc3;
@@ -109,9 +113,12 @@ export default {
   text-align: left;
 }
 .clone-text > h3 {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
-.clone-text p {
+.clone-wrap {
+  box-sizing: border-box;
+}
+.clone-lang > p {
   width: max-content;
   background: #232946;
   border-radius: 5px;
@@ -119,9 +126,6 @@ export default {
   padding: 4px 6px;
   margin-bottom: 10px;
   margin-right: 5px;
-}
-.clone-wrap {
-  box-sizing: border-box;
 }
 .clone-lang {
   width: 100%;
@@ -136,5 +140,8 @@ export default {
   height: 450px;
   transition: 0.3s ease-in-out;
   transform: translateY(-30%);
+}
+.make-time {
+  padding-bottom: 10px;
 }
 </style>
