@@ -6,7 +6,7 @@
     left: -5px;
     -webkit-transform: rotateZ(-30deg);
     transform: rotateZ(-30deg);
-    z-index: 1;
+    z-index: 200;
   }
   
   .shooting_star {

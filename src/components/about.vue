@@ -9,9 +9,8 @@
       <h2>꿈꾸는 개발자가 되고싶습니다.</h2>
       <p>
         물류전산, 유튜버 편집등 다양한 경험을 하다 개발자 친구들의 권유로 코딩을
-        경험하고 흥미가<br />
-        생겨 공부하게 되었습니다. 늦깎이 개발자이지만 열정을 가지고
-        임하겠습니다.
+        경험하고 흥미가 생겨 공부하게 되었습니다. 늦깎이 개발자이지만 열정을
+        가지고 임하겠습니다.
       </p>
     </div>
     <div>
@@ -35,12 +34,17 @@
         <li :key="line" v-for="(skill, line) in skillper">
           <p class="skill-title">{{ skill.title }}</p>
           <div class="skill-graph">
-            <div class="graph-per" :style="{ width: skill.percent }"></div>
-            <span>{{ skill.percent }}</span>
+            <div class="graph-per" :style="{ width: skill.percent }">
+              <span>{{ skill.percent }}</span>
+            </div>
           </div>
         </li>
       </ul>
     </div>
+    <div class="cloud1"></div>
+    <div class="cloud2"></div>
+    <div class="rocket"></div>
+    <div class="jupiter"></div>
   </div>
 </template>
 
@@ -87,6 +91,43 @@ export default {
 </script>
 
 <style scoped>
+.cloud1 {
+  background: url(../assets/cloud1.png) no-repeat;
+  position: absolute;
+  width: 550px;
+  height: 200px;
+  left: -300px;
+  top: 0;
+}
+.cloud2 {
+  background: url(../assets/cloud2.png) no-repeat;
+  position: absolute;
+  width: 620px;
+  height: 250px;
+  right: -300px;
+  top: 510px;
+}
+.rocket {
+  background: url(../assets/rocket.png) no-repeat;
+  position: absolute;
+  width: 230px;
+  height: 280px;
+  left: -120px;
+  top: 1200px;
+}
+.jupiter {
+  background: url(../assets/jupiter.png) no-repeat;
+  position: absolute;
+  width: 160px;
+  height: 105px;
+  right: -80px;
+  top: 1200px;
+}
+.aboutme {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
 .aboutme > p {
   padding: 80px 0;
 }
@@ -122,7 +163,7 @@ export default {
   padding-bottom: 10px;
 }
 .myletme > p {
-  max-width: 700px;
+  max-width: 714px;
   margin: auto;
   font-size: 16px;
   font-weight: 500;
@@ -159,11 +200,12 @@ export default {
   max-width: 1400px;
   margin: auto;
   color: #fff;
-  padding-bottom: 80px;
+  padding: 80px 0;
+  z-index: 100;
+  position: relative;
 }
 .myskills li {
   display: flex;
-  justify-content: space-between;
   text-align: center;
   padding: 10px 30px;
 }
@@ -180,23 +222,113 @@ export default {
 }
 .skill-graph {
   width: 100%;
+  height: 24px;
   background-color: #fff;
   border-radius: 5px;
-  text-align: right;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
-.skill-graph > span {
+.graph-per > span {
   color: #000;
   font-size: 14px;
   font-weight: bold;
-  position: relative;
+  position: absolute;
   right: 10px;
 }
 .graph-per {
   background-color: #eebbc3;
-  width: 50%;
   height: 100%;
   border-radius: 5px;
+}
+@media only screen and (max-width: 1200px) {
+  .cloud1 {
+    transform: scale(0.6);
+    transition: 0.3s ease-in-out;
+  }
+  .cloud2 {
+    transform: scale(0.6);
+    transition: 0.3s ease-in-out;
+  }
+  .rocket {
+    transform: scale(0.6);
+    transition: 0.3s ease-in-out;
+  }
+  .jupiter {
+    transform: scale(0.6);
+    transition: 0.3s ease-in-out;
+  }
+  .circle {
+    width: 280px;
+    height: 280px;
+    transition: 0.3s ease-in-out;
+  }
+  .md-light {
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .cloud1 {
+    transform: scale(0.5);
+  }
+  .cloud2 {
+    transform: scale(0.5);
+  }
+  .rocket {
+    transform: scale(0.5);
+    top: 1095px;
+  }
+  .jupiter {
+    transform: scale(0.5);
+  }
+  .circle {
+    width: 240px;
+    height: 240px;
+  }
+  .c-left {
+    left: 80px;
+  }
+  .c-right {
+    right: 80px;
+  }
+  .myletme {
+    padding: 30px 20px;
+  }
+  .infolist > li {
+    width: 40%;
+    height: 100px;
+    padding: 0 20px 10px;
+    align-items: center;
+  }
+  .myskills li {
+    display: block;
+  }
+  .skill-title {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 415px) {
+  .circle {
+    width: 155px;
+    height: 155px;
+  }
+  .c-left {
+    left: 30px;
+  }
+  .c-right {
+    right: 30px;
+  }
+  .myletme {
+    padding: 30px 15px;
+  }
+  .infolist {
+    box-sizing: border-box;
+  }
+  .infolist > li {
+    width: 70%;
+    padding: 0 15px 10px;
+  }
 }
 </style>

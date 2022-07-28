@@ -26,14 +26,19 @@
           </div>
           <div class="clone-wrap">
             <p>{{ clone.title }}</p>
-            <div class="clone-icon">
-              <img>
-              <img>
-            </div>
+            <ul class="clone-icon">
+              <li class="page">
+                <a :href="clone.page"><img :src="clone.imgtab" /></a>
+              </li>
+              <li class="github">
+                <a :href="clone.github"><img :src="clone.imggit" /></a>
+              </li>
+            </ul>
           </div>
         </div>
       </li>
     </ul>
+    <div class="cloud3"></div>
   </div>
 </template>
 <script>
@@ -49,6 +54,10 @@ export default {
           text: "메인페이지와 커뮤니티 페이지를 작업하였습니다. 싱그러운집 클론을 통해 Swiper의 사용법과 HTML/CSS의 기초를 다졌습니다.",
           time: "22. 2 ~ 22. 4",
           lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
+          page: "https://www.naver.com",
+          github: "https://www.naver.com",
+          imgtab: require("../assets/openpage.png"),
+          imggit: require("../assets/github.png"),
         },
         {
           imgurl: require("../assets/dcaf.png"),
@@ -56,6 +65,10 @@ export default {
           text: "메인페이지와 문화 문화예술공간-대전무형문화재 전수회관 페이지를 클론했습니다. HTML/CSS와 JS, jQuery를 공부하였습니다.",
           time: "22. 4 ~ 22. 5",
           lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
+          page: "https://www.naver.com",
+          github: "https://www.naver.com",
+          imgtab: require("../assets/openpage.png"),
+          imggit: require("../assets/github.png"),
         },
         {
           imgurl: require("../assets/pollexzone.png"),
@@ -63,6 +76,10 @@ export default {
           text: "메인페이지와 회사소개 페이지를 클론했습니다. CSS의 동적 움직임과 JS를 이용한 메뉴 변환을 익혔습니다.",
           time: "22. 5 ~ 22. 6",
           lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
+          page: "https://www.naver.com",
+          github: "https://www.naver.com",
+          imgtab: require("../assets/openpage.png"),
+          imggit: require("../assets/github.png"),
         },
       ],
     };
@@ -76,51 +93,59 @@ export default {
 </script>
 
 <style scoped>
+.cloud3 {
+  background: url(../assets/cloud3.png) no-repeat;
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  left: 280px;
+  top: 540px;
+}
+.clone {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
 .clone > p {
   padding: 80px 0;
 }
 .clone-list {
   position: relative;
   width: 100%;
-  max-height: 700px;
+  z-index: 100;
+  text-align: center;
+  border: 1px solid red;
   display: flex;
-  justify-content: space-around;
-  padding-bottom: 50px;
 }
 .cloneimg {
+  width: 100%;
   text-align: center;
+  cursor: pointer;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 .cloneimg > img {
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
   border-radius: 10px;
   z-index: 1;
   position: relative;
 }
 .clone-title {
-  width: 100%;
-  max-width: 352px;
-  height: 410px;
-  padding: 110px 30px 30px;
+  padding: 30px;
   box-sizing: border-box;
   background-color: #eebbc3;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
   border-radius: 10px;
   color: #fff;
-  text-align: center;
-  transform: translateY(-75%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 .clone-text {
   text-align: left;
+  box-sizing: border-box;
 }
 .clone-text > h3 {
   padding-bottom: 20px;
-}
-.clone-wrap {
-  box-sizing: border-box;
 }
 .clone-lang > p {
   width: max-content;
@@ -141,11 +166,30 @@ export default {
   transition: 0.3s ease-in-out;
 }
 .clone-title.active {
-  height: 450px;
+  padding-top: 100px;
   transition: 0.3s ease-in-out;
   transform: translateY(-30%);
 }
 .make-time {
+  padding-bottom: 20px;
+}
+.clone-wrap {
+  box-sizing: border-box;
+}
+.clone-wrap > p {
+  font-size: 18px;
+  font-weight: 500;
   padding-bottom: 10px;
+}
+.clone-icon {
+  display: flex;
+  justify-content: space-around;
+}
+.clone-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+@media only screen and (max-width: 1200px) {
 }
 </style>
