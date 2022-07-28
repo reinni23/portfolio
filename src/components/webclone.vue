@@ -27,8 +27,8 @@
           <div class="clone-wrap">
             <p>{{ clone.title }}</p>
             <div class="clone-icon">
-              <a>아이콘1</a>
-              <a>아이콘2</a>
+              <img>
+              <img>
             </div>
           </div>
         </div>
@@ -54,11 +54,15 @@ export default {
           imgurl: require("../assets/dcaf.png"),
           title: "대전문화회관",
           text: "메인페이지와 문화 문화예술공간-대전무형문화재 전수회관 페이지를 클론했습니다. HTML/CSS와 JS, jQuery를 공부하였습니다.",
+          time: "22. 4 ~ 22. 5",
+          lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
         },
         {
           imgurl: require("../assets/pollexzone.png"),
           title: "POLLEXZONE",
           text: "메인페이지와 회사소개 페이지를 클론했습니다. CSS의 동적 움직임과 JS를 이용한 메뉴 변환을 익혔습니다.",
+          time: "22. 5 ~ 22. 6",
+          lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
         },
       ],
     };
