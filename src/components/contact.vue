@@ -85,7 +85,7 @@ export default {
   padding: 80px 0;
 }
 .contact-icon > li {
-  z-index: 200;
+  z-index: 100;
 }
 .contact-icon img {
   width: 30px;
