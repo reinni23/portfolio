@@ -37,11 +37,13 @@
     </div>
   </div>
 
-  <intro id="intro"></intro>
-  <about id="about"></about>
-  <webclone id="webclone"></webclone>
-  <project id="project"></project>
-  <contact id="contact"></contact>
+
+    <intro id="intro"></intro>
+    <about id="about"></about>
+    <webclone id="webclone"></webclone>
+    <project id="project"></project>
+    <contact id="contact"></contact>
+    <kakaomodal id="kakao" v-if="modalView" @close-modal="modalView = false"></kakaomodal>
   <router-view></router-view>
 </template>
 
@@ -51,11 +53,14 @@ import about from "./components/about.vue";
 import webclone from "./components/webclone.vue";
 import project from "./components/project.vue";
 import contact from "./components/contact.vue";
+import kakaomodal from "./components/kakaomodal.vue";
 
 export default {
   name: "app",
   data() {
-    return { popup: false };
+    return {
+      popup: false,
+    };
   },
 
   methods: {
@@ -93,7 +98,7 @@ export default {
       }
     },
   },
-  components: { intro, about, webclone, project, contact },
+  components: { intro, about, webclone, project, contact, kakaomodal },
 };
 </script>
 
@@ -221,7 +226,7 @@ export default {
   .navbar.active {
     background: rgb(24, 24, 24);
     height: 100%;
-    
+
     transition: 0.3s ease-in-out;
   }
   .navbar > p {
