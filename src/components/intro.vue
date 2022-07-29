@@ -29,7 +29,7 @@ export default { name: "app" };
 }
 .letme {
   width: 100%;
-  height: 900px;
+  height: 860px;
   display: flex;
   flex-direction: column;
   justify-content: center;

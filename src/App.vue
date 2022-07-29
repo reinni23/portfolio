@@ -1,20 +1,20 @@
 <template>
   <div id="main">
-    <!-- <nav class="navbar">
-      <div class="nav-burger">
+    <nav class="navbar" :class="{ active: popup }">
+      <div class="nav-burger" v-on:click="navBurger" :class="{ active: popup }">
         <span></span>
         <span></span>
         <span></span>
       </div>
       <p v-on:click="gotointro">HS</p>
-      <ul class="nav-menu">
+      <ul class="nav-menu" :class="{ active: popup }">
         <li v-on:click="gotoabout">ABOUT ME</li>
         <li v-on:click="gotowcl">Web Clone</li>
         <li v-on:click="gotopr">Project</li>
         <li v-on:click="gotocontact">Contact</li>
       </ul>
-    </nav> -->
-    <!-- <div class="night">
+    </nav>
+    <div class="night">
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
@@ -34,7 +34,7 @@
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
-    </div> -->
+    </div>
   </div>
 
   <intro id="intro"></intro>
@@ -54,7 +54,14 @@ import contact from "./components/contact.vue";
 
 export default {
   name: "app",
+  data() {
+    return { popup: false };
+  },
+
   methods: {
+    navBurger() {
+      this.popup = !this.popup;
+    },
     gotointro() {
       const intro = document.getElementById("intro");
       if (intro) {
@@ -123,7 +130,7 @@ export default {
   font-size: 32px;
   cursor: pointer;
 }
-.navbar > ul {
+.nav-menu {
   display: flex;
   padding: 10px 0;
   justify-content: space-around;
@@ -185,9 +192,10 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 24px;
+    height: 20px;
     right: 15px;
     top: 15px;
+    cursor: pointer;
   }
   .nav-burger > span {
     display: block;
@@ -195,17 +203,43 @@ export default {
     height: 3px;
     background: #fff;
   }
-  .navbar {
-    background: #121629;
-    /* height: 100%; */
-    display: block;
-    padding: 5px 30px 0;
+  .nav-burger.active > span:first-child {
+    transform: rotateZ(45deg) translate(5px, 5px);
+    transition: 0.3s ease-in-out;
   }
-  .navbar > ul {
+  .nav-burger.active > span:nth-child(even) {
+    display: none;
+  }
+  .nav-burger.active > span:last-child {
+    transform: rotateZ(-45deg) translate(7px, -7px);
+    transition: 0.3s ease-in-out;
+  }
+  .navbar {
+    display: block;
+    padding: 5px 15px 0;
+  }
+  .navbar.active {
+    background: rgb(24, 24, 24);
+    height: 100%;
+    
+    transition: 0.3s ease-in-out;
+  }
+  .navbar > p {
+    font-size: 22px;
+    line-height: 40px;
+    width: 45px;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .nav-menu.active {
+    display: flex;
     flex-direction: column;
-    height: 75%;
+    height: 500px;
   }
   .navbar li {
+    width: 80px;
+    font-size: 14px;
     margin: auto;
   }
 }

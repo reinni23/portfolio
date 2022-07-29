@@ -5,16 +5,24 @@
       <div class="contact-info">
         <ul class="contact-icon" :key="clist" v-for="(cont, clist) in contlist">
           <li class="github">
-            <a :href="cont.github" target='_blank'><img :src="cont.imggit" /></a>
+            <a :href="cont.github" target="_blank"
+              ><img :src="cont.imggit"
+            /></a>
           </li>
           <li class="insta">
-            <a :href="cont.insta" target='_blank'><img :src="cont.imginsta" /></a>
+            <a :href="cont.insta" target="_blank"
+              ><img :src="cont.imginsta"
+            /></a>
           </li>
           <li class="email">
-            <a :href="cont.email" target='_blank'><img :src="cont.imgemail" /></a>
+            <a :href="cont.email" target="_blank"
+              ><img :src="cont.imgemail"
+            /></a>
           </li>
           <li class="kakao">
-            <a :href="cont.kakao" target='_blank'><img :src="cont.imgkakao" /></a>
+            <a :href="cont.kakao" target="_blank"
+              ><img :src="cont.imgkakao"
+            /></a>
           </li>
         </ul>
         <div class="contact-detail">
@@ -76,6 +84,9 @@ export default {
   justify-content: space-between;
   padding: 80px 0;
 }
+.contact-icon > li {
+  z-index: 200;
+}
 .contact-icon img {
   width: 30px;
   height: 30px;
@@ -89,5 +100,26 @@ export default {
 }
 .contact-detail > p {
   padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-wrap > p {
+    font-size: 28px;
+  }
+  .contact-detail {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact-wrap > p {
+    font-size: 24px;
+  }
+  .contact-icon {
+    max-width: 225px;
+  }
+  .contact-icon img {
+    width: 25px;
+    height: 25px;
+  }
 }
 </style>

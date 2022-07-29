@@ -8,13 +8,26 @@
         class="cloneimg"
         v-on:click="setImg"
       >
-        <img
-          :src="clone.imgurl"
-          width="100%"
-          class="imgtab"
+        <img :src="clone.imgurl" class="imgtab" />
+        <div
+          class="clone-title"
           :class="{ active: movecl }"
-        />
-        <div class="clone-title" :class="{ active: movecl }">
+        >
+          <div class="clone-wrap">
+            <p>{{ clone.title }}</p>
+            <ul class="clone-icon">
+              <li class="page">
+                <a :href="clone.page" target="_blank"
+                  ><img :src="clone.imgtab"
+                /></a>
+              </li>
+              <li class="github">
+                <a :href="clone.github" target="_blank"
+                  ><img :src="clone.imggit"
+                /></a>
+              </li>
+            </ul>
+          </div>
           <div class="clone-text">
             <h3>{{ clone.text }}</h3>
             <p class="make-time">제작기간 : {{ clone.time }}</p>
@@ -23,17 +36,6 @@
                 {{ lang.id }}
               </p>
             </div>
-          </div>
-          <div class="clone-wrap">
-            <p>{{ clone.title }}</p>
-            <ul class="clone-icon">
-              <li class="page">
-                <a :href="clone.page"><img :src="clone.imgtab" /></a>
-              </li>
-              <li class="github">
-                <a :href="clone.github"><img :src="clone.imggit" /></a>
-              </li>
-            </ul>
           </div>
         </div>
       </li>
@@ -114,82 +116,97 @@ export default {
   width: 100%;
   z-index: 100;
   text-align: center;
-  border: 1px solid red;
   display: flex;
+  justify-content: space-around;
 }
 .cloneimg {
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-  padding: 0 30px;
-  box-sizing: border-box;
-}
-.cloneimg > img {
-  max-width: 320px;
-  width: 100%;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 10px;
-  z-index: 1;
   position: relative;
+  width: 325px;
+  height: 580px;
+  overflow: hidden;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  cursor: pointer;
+}
+.imgtab {
+  width: 100%;
+  height: 460px;
+  transition: 0.4s 0.2s ease-in-out;
 }
 .clone-title {
-  padding: 30px;
-  box-sizing: border-box;
-  background-color: #eebbc3;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 10px;
+  width: auto;
+  height: 580px;
+  position: relative;
+  padding: 25px;
+  background: #eebbc3;
+  transition: 0.4s 0.2s ease-in-out;
   color: #fff;
-}
-.clone-text {
-  text-align: left;
-  box-sizing: border-box;
-}
-.clone-text > h3 {
-  padding-bottom: 20px;
-}
-.clone-lang > p {
-  width: max-content;
-  background: #232946;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 4px 6px;
-  margin-bottom: 10px;
-  margin-right: 5px;
-}
-.clone-lang {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.imgtab.active {
-  transform: scale(0.8);
-  transition: 0.3s ease-in-out;
-}
-.clone-title.active {
-  padding-top: 100px;
-  transition: 0.3s ease-in-out;
-  transform: translateY(-30%);
-}
-.make-time {
-  padding-bottom: 20px;
-}
-.clone-wrap {
-  box-sizing: border-box;
 }
 .clone-wrap > p {
   font-size: 18px;
-  font-weight: 500;
-  padding-bottom: 10px;
+  font-weight: bold;
+}
+.clone-title.active {
+  transform: translateY(-460px);
 }
 .clone-icon {
   display: flex;
   justify-content: space-around;
+  padding: 15px 0 25px;
 }
 .clone-icon img {
   width: 30px;
   height: 30px;
 }
-
-@media only screen and (max-width: 1200px) {
+.clone-icon > li > a :hover {
+  transform: scale(1.2);
+  transition: 0.2s ease-in-out;
+}
+.clone-text {
+  text-align: start;
+}
+.make-time {
+  padding: 10px 0 20px;
+}
+.clone-lang {
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+}
+.clone-lang > p {
+  font-size: 14px;
+  background: #232946;
+  border-radius: 5px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+@media only screen and (max-width: 1000px) {
+  .cloneimg {
+    width: 270px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .clone-list {
+    flex-direction: column;
+  }
+  .cloneimg {
+    width: 325px;
+  }
+  .clone-list > li {
+    margin: 0 auto 30px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .clone-wrap > p {
+    font-size: 15px;
+  }
+  .clone-icon img {
+    width: 25px;
+    height: 25px;
+  }
+  .-text {
+    font-size: 14px;
+  }
 }
 </style>

@@ -15,6 +15,21 @@
           :class="{ active: movepr }"
         />
         <div class="pr-title" :class="{ active: movepr }">
+          <div class="pr-wrap">
+            <p>{{ pr.title }}</p>
+            <ul class="pr-icon">
+              <li class="page">
+                <a :href="pr.page" target="_blank"><img :src="pr.imgtab" /></a>
+              </li>
+              <li class="mockup">
+                <a :href="pr.mockup" target="_blank"><img :src="pr.imgmockup" /></a>
+              </li>
+              <li class="github">
+                <a :href="pr.github" target="_blank"><img :src="pr.imggit" /></a>
+              </li>
+            </ul>
+          </div>
+
           <div class="pr-text">
             <h3>{{ pr.text }}</h3>
             <p class="make-time">제작기간 : {{ pr.time }}</p>
@@ -23,20 +38,6 @@
                 {{ lang.id }}
               </p>
             </div>
-          </div>
-          <div class="pr-wrap">
-            <p>{{ pr.title }}</p>
-            <ul class="pr-icon">
-              <li class="page">
-                <a :href="pr.page"><img :src="pr.imgtab" /></a>
-              </li>
-              <li class="mockup">
-                <a :href="pr.mockup"><img :src="pr.imgmockup" /></a>
-              </li>
-              <li class="github">
-                <a :href="pr.github"><img :src="pr.imggit" /></a>
-              </li>
-            </ul>
           </div>
         </div>
       </li>
@@ -104,6 +105,14 @@ export default {
 </script>
 
 <style scoped>
+.project {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.project > p {
+  padding: 80px 0;
+}
 .cloud4 {
   background: url(../assets/cloud4.png) no-repeat;
   position: absolute;
@@ -128,95 +137,97 @@ export default {
   left: -36px;
   top: 67px;
 }
-.project {
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.project > p {
-  padding-bottom: 80px;
-}
 .pr-list {
   position: relative;
   width: 100%;
+  z-index: 100;
+  text-align: center;
   display: flex;
   justify-content: space-around;
-  z-index: 100;
 }
 .primg {
-  text-align: center;
-  cursor: pointer;
-}
-.primg > img {
-  max-width: 320px;
-  width: 100%;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 10px;
-  z-index: 1;
   position: relative;
+  width: 325px;
+  height: 580px;
+  overflow: hidden;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+}
+.imgtab {
+  width: 100%;
+  height: 460px;
+  transition: 0.4s 0.2s ease-in-out;
 }
 .pr-title {
-  width: 100%;
-  max-width: 352px;
-  height: 500px;
-  padding: 110px 30px 30px;
-  box-sizing: border-box;
-  background-color: #eebbc3;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 10px;
+  width: auto;
+  height: 580px;
+  position: relative;
+  padding: 25px;
+  background: #eebbc3;
+  transition: 0.4s 0.2s ease-in-out;
   color: #fff;
-  text-align: center;
-  transform: translateY(-80%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.pr-text {
-  text-align: left;
-}
-.pr-text > h3 {
-  padding-bottom: 15px;
-}
-.pr-lang > p {
-  width: max-content;
-  background: #232946;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 4px 6px;
-  margin-bottom: 10px;
-  margin-right: 5px;
-}
-.pr-lang {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.imgtab.active {
-  transform: scale(0.8);
-  transition: 0.3s ease-in-out;
-}
-.pr-title.active {
-  height: 495px;
-  transition: 0.3s ease-in-out;
-  transform: translateY(-30%);
-}
-.make-time {
-  padding-bottom: 10px;
-}
-.pr-wrap {
-  box-sizing: border-box;
 }
 .pr-wrap > p {
   font-size: 18px;
-  font-weight: 500;
-  padding-bottom: 10px;
+  font-weight: bold;
+}
+.pr-title.active {
+  transform: translateY(-460px);
 }
 .pr-icon {
   display: flex;
   justify-content: space-around;
+  padding: 20px 0 25px;
 }
 .pr-icon img {
   width: 30px;
   height: 30px;
+}
+.pr-text {
+  text-align: start;
+}
+.make-time {
+  padding: 10px 0 20px;
+}
+.pr-lang {
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+}
+.pr-lang > p {
+  font-size: 14px;
+  background: #232946;
+  border-radius: 5px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+@media only screen and (max-width: 1000px) {
+  .primg {
+    width: 270px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .pr-list {
+    flex-direction: column;
+  }
+  .primg {
+    width: 325px;
+  }
+  .pr-list > li {
+    margin: 0 auto 30px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .pr-wrap > p {
+    font-size: 15px;
+  }
+  .pr-icon img {
+    width: 25px;
+    height: 25px;
+  }
+  .pr-text {
+    font-size: 14px;
+  }
 }
 </style>
