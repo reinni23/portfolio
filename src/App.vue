@@ -37,13 +37,16 @@
     </div>
   </div>
 
-
-    <intro id="intro"></intro>
-    <about id="about"></about>
-    <webclone id="webclone"></webclone>
-    <project id="project"></project>
-    <contact id="contact"></contact>
-    <kakaomodal id="kakao" v-if="modalView" @close-modal="modalView = false"></kakaomodal>
+  <intro id="intro"></intro>
+  <about id="about"></about>
+  <webclone id="webclone"></webclone>
+  <project id="project"></project>
+  <contact id="contact"></contact>
+  <kakaomodal
+    id="kakao"
+    v-if="modalView"
+    @close-modal="modalView = false"
+  ></kakaomodal>
   <router-view></router-view>
 </template>
 
