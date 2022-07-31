@@ -1,45 +1,41 @@
 <template>
-    <div id="#contact">
-      <div class="contact-wrap">
-        <p>Contact</p>
-        <div class="contact-info">
-          <ul
-            class="contact-icon"
-            :key="clist"
-            v-for="(cont, clist) in contlist"
-          >
-            <li class="github">
-              <a :href="cont.github" target="_blank"
-                ><img :src="cont.imggit"
-              /></a>
-            </li>
-            <li class="insta">
-              <a :href="cont.insta" target="_blank"
-                ><img :src="cont.imginsta"
-              /></a>
-            </li>
-            <li class="email">
-              <a :href="cont.email"><img :src="cont.imgemail" /></a>
-            </li>
-            <li class="kakao">
-              <a @click="modalView = true"><img :src="cont.imgkakao" /></a>
-            </li>
-          </ul>
-          <div class="contact-detail">
-            <p>Tel. 010-3684-6218</p>
-            <p>Email : reinni@naver.com</p>
-          </div>
+  <div id="#contact">
+    <div class="contact-wrap">
+      <p>Contact</p>
+      <div class="contact-info">
+        <ul class="contact-icon" :key="clist" v-for="(cont, clist) in contlist">
+          <li class="github">
+            <a :href="cont.github" target="_blank"
+              ><img :src="cont.imggit"
+            /></a>
+          </li>
+          <li class="insta">
+            <a :href="cont.insta" target="_blank"
+              ><img :src="cont.imginsta"
+            /></a>
+          </li>
+          <li class="email">
+            <a :href="cont.email"><img :src="cont.imgemail" /></a>
+          </li>
+          <li class="kakao">
+            <router-link to="/kakaomodal">
+              <a> <img :src="cont.imgkakao" /> </a
+            ></router-link>
+          </li>
+        </ul>
+        <div class="contact-detail">
+          <p>Tel. 010-3684-6218</p>
+          <p>Email : reinni@naver.com</p>
         </div>
       </div>
     </div>
+  </div>
 </template>
 <script>
-
 export default {
   name: "app",
   data() {
     return {
-      modalView: false,
       contlist: [
         {
           github: "https://github.com/reinni23",

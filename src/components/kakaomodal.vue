@@ -1,6 +1,8 @@
 <template>
   <div class="modal">
-    <div class="overlay" @click="$emit('close-modal')"></div>
+    <router-link to="/"
+      ><div class="overlay" @click="modalView = true"></div>
+    </router-link>
     <div class="kakao-card">
       <slot />
     </div>
@@ -10,6 +12,7 @@
 <script>
 export default {
   name: "app",
+  modalView: false,
 };
 </script>
 
@@ -21,6 +24,7 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 200;
 }
 .overlay {
   opacity: 0.5;
@@ -28,13 +32,14 @@ export default {
 }
 .kakao-card {
   position: relative;
-  max-width: 50%;
+  max-width: 700px;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 100px;
   padding: 20px;
-  background: url(../assets/hskakao.png);
-  min-height: 500px;
-  z-index: 10;
+  background: url(../assets/hskakao.png) no-repeat;
+  height: 72%;
+  z-index: 300;
   opacity: 1;
+  transform: scale(0.5);
 }
 </style>

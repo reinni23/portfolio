@@ -62,6 +62,7 @@ export default {
   name: "app",
   data() {
     return {
+      modalView: false,
       popup: false,
     };
   },
