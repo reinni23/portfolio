@@ -1,12 +1,10 @@
 <template>
-  <div class="modal">
-    <router-link to="/"
-      ><div class="overlay" @click="kakaoView = true"></div>
-    </router-link>
-    <div class="kakao-card">
-      <slot />
+  <router-link to="/">
+    <div class="modal">
+      <div class="overlay" @click="kakaoView = true"></div>
+      <div class="kakao-card"><img src="../assets/hskakao.png" /></div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -30,20 +28,17 @@ export default {
   opacity: 0.5;
   background-color: black;
 }
-.kakao-card {
+.kakao-card > img {
   position: relative;
-  background: url(http://localhost:8080/img/hskakao.72b51d97.png) no-repeat;
-  background-size: cover;
-  width: 713px;
-  height: 723px;
-  top: 33%;
+  top: 250px;
+  display: block;
   z-index: 200;
   margin: auto;
   width: 300px;
   height: 300px;
 }
 @media only screen and (max-width: 768px) {
-  .kakao-card {
+  .kakao-card > img {
     transform: scale(0.8);
   }
 }

@@ -38,7 +38,6 @@ div {
   z-index: 200;
 }
 .mock-bg {
-  transform: translate(0.8);
   width: 100%;
   height: 100%;
   overflow-x: hidden;
