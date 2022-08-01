@@ -5,6 +5,7 @@ import webclone from "../components/webclone.vue";
 import project from "../components/project.vue";
 import contact from "../components/contact.vue";
 import kakaomodal from "../components/kakaomodal.vue";
+import hiltonmodal from "../components/hiltonmodal.vue";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: "/kakaomodal",
     name: "kakao",
     component: kakaomodal,
+  },
+  {
+    path: "/hiltonmodal",
+    name: "hiltonm",
+    component: hiltonmodal,
   },
 ];
 

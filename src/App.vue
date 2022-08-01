@@ -14,7 +14,7 @@
         <li v-on:click="gotocontact">Contact</li>
       </ul>
     </nav>
-    <div class="night">
+    <!-- <div class="night">
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
@@ -34,18 +34,23 @@
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
-    </div>
+    </div> -->
   </div>
 
   <intro id="intro"></intro>
   <about id="about"></about>
   <webclone id="webclone"></webclone>
   <project id="project"></project>
+  <hiltonmodal
+    id="hilton"
+    v-if="hiltonView"
+    @close-modal="hiltonView = false"
+  ></hiltonmodal>
   <contact id="contact"></contact>
   <kakaomodal
     id="kakao"
-    v-if="modalView"
-    @close-modal="modalView = false"
+    v-if="kakaoView"
+    @close-modal="kakaoView = false"
   ></kakaomodal>
   <router-view></router-view>
 </template>
@@ -57,12 +62,14 @@ import webclone from "./components/webclone.vue";
 import project from "./components/project.vue";
 import contact from "./components/contact.vue";
 import kakaomodal from "./components/kakaomodal.vue";
+import hiltonmodal from "./components/hiltonmodal.vue";
 
 export default {
   name: "app",
   data() {
     return {
-      modalView: false,
+      hiltonView: false,
+      kakaoView: false,
       popup: false,
     };
   },
@@ -102,7 +109,15 @@ export default {
       }
     },
   },
-  components: { intro, about, webclone, project, contact, kakaomodal },
+  components: {
+    intro,
+    about,
+    webclone,
+    project,
+    contact,
+    kakaomodal,
+    hiltonmodal,
+  },
 };
 </script>
 

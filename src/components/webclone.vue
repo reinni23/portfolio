@@ -3,16 +3,13 @@
     <p>Web Clone</p>
     <ul class="clone-list">
       <li
-        :key="list1"
-        v-for="(clone, list1) in clonelist"
+        :key="i"
+        v-for="(clone, i) in clonelist"
         class="cloneimg"
-        v-on:click="setImg"
+        v-on:click="setImg(i)"
       >
         <img :src="clone.imgurl" class="imgtab" />
-        <div
-          class="clone-title"
-          :class="{ active: movecl }"
-        >
+        <div class="clone-title" :class="{ active: movecl[i] }">
           <div class="clone-wrap">
             <p>{{ clone.title }}</p>
             <ul class="clone-icon">
@@ -48,7 +45,7 @@ export default {
   name: "app",
   data() {
     return {
-      movecl: false,
+      movecl: [false, false, false],
       clonelist: [
         {
           imgurl: require("../assets/flowerhouse.png"),
@@ -87,8 +84,8 @@ export default {
     };
   },
   methods: {
-    setImg() {
-      this.movecl = !this.movecl;
+    setImg(i) {
+      this.movecl[i] = !this.movecl[i];
     },
   },
 };
@@ -109,7 +106,7 @@ export default {
   overflow: hidden;
 }
 .clone > p {
-  padding: 80px 0;
+  padding-bottom: 80px;
 }
 .clone-list {
   position: relative;
@@ -135,18 +132,27 @@ export default {
 }
 .clone-title {
   width: auto;
-  height: 580px;
+  height: 530px;
   position: relative;
   padding: 25px;
   background: #eebbc3;
   transition: 0.4s 0.2s ease-in-out;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .clone-wrap > p {
   font-size: 18px;
   font-weight: bold;
 }
-.clone-title.active {
+.active {
+  transform: translateY(-460px);
+}
+.imgtab:hover ~ .clone-title {
+  transform: translateY(-460px);
+}
+.clone-title:hover {
   transform: translateY(-460px);
 }
 .clone-icon {
@@ -164,6 +170,9 @@ export default {
 }
 .clone-text {
   text-align: start;
+}
+.clone-text > h3 {
+  padding-bottom: 10px;
 }
 .make-time {
   padding: 10px 0 20px;
@@ -187,6 +196,9 @@ export default {
   }
 }
 @media only screen and (max-width: 768px) {
+  .clone > p {
+    padding-bottom: 50px;
+  }
   .clone-list {
     flex-direction: column;
   }
@@ -194,7 +206,10 @@ export default {
     width: 325px;
   }
   .clone-list > li {
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
+  }
+  .clone-title {
+    pointer-events: none;
   }
 }
 @media only screen and (max-width: 375px) {

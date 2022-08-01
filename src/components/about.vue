@@ -228,13 +228,15 @@ export default {
   display: flex;
   justify-content: space-between;
   position: relative;
+  text-align: right;
 }
 .graph-per > span {
   color: #000;
   font-size: 14px;
   font-weight: bold;
-  position: absolute;
-  right: 10px;
+  margin-right: 10px;
+  position: relative;
+  left: 50px;
 }
 .graph-per {
   background-color: #eebbc3;
@@ -300,6 +302,9 @@ export default {
     padding: 0 20px 10px;
     align-items: center;
   }
+  .myskills {
+    padding-bottom: 50px;
+  }
   .myskills li {
     display: block;
   }
@@ -327,7 +332,8 @@ export default {
     box-sizing: border-box;
   }
   .infolist > li {
-    width: 70%;
+    width: 80%;
+    height: 70px;
     padding: 0 15px 10px;
   }
 }

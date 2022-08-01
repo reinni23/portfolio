@@ -1,20 +1,16 @@
+0
 <template>
   <div class="project backimg">
     <p>Project</p>
     <ul class="pr-list">
       <li
-        :key="list1"
-        v-for="(pr, list1) in prlist"
+        :key="j"
+        v-for="(pr, j) in prlist"
         class="primg"
-        v-on:click="setProj"
+        v-on:click="setProj(j)"
       >
-        <img
-          :src="pr.imgurl"
-          width="100%"
-          class="imgtab"
-          :class="{ active: movepr }"
-        />
-        <div class="pr-title" :class="{ active: movepr }">
+        <img :src="pr.imgurl" class="imgtab" />
+        <div class="pr-title" :class="{ active: movepr[j] }">
           <div class="pr-wrap">
             <p>{{ pr.title }}</p>
             <ul class="pr-icon">
@@ -22,10 +18,12 @@
                 <a :href="pr.page" target="_blank"><img :src="pr.imgtab" /></a>
               </li>
               <li class="mockup">
-                <a :href="pr.mockup" target="_blank"><img :src="pr.imgmockup" /></a>
+                <a :href="pr.mockup"><img :src="pr.imgmockup" /></a>
               </li>
               <li class="github">
-                <a :href="pr.github" target="_blank"><img :src="pr.imggit" /></a>
+                <a :href="pr.github" to="/hiltonmodal">
+                  <img :src="pr.imggit"
+                /></a>
               </li>
             </ul>
           </div>
@@ -53,7 +51,7 @@ export default {
   name: "app",
   data() {
     return {
-      movepr: false,
+      movepr: [false, false, false],
       prlist: [
         {
           imgurl: require("../assets/seomun.png"),
@@ -87,7 +85,7 @@ export default {
             { id: "mySql" },
           ],
           page: "https://www.naver.com",
-          mockup: "https://www.naver.com",
+          mockup: "/hiltonmodal",
           github: "https://www.naver.com",
           imgtab: require("../assets/openpage.png"),
           imgmockup: require("../assets/device_icon.png"),
@@ -97,8 +95,8 @@ export default {
     };
   },
   methods: {
-    setProj() {
-      this.movepr = !this.movepr;
+    setProj(j) {
+      this.movepr[j] = !this.movepr[j];
     },
   },
 };
@@ -111,7 +109,7 @@ export default {
   overflow: hidden;
 }
 .project > p {
-  padding: 80px 0;
+  padding: 50px 0 50px;
 }
 .cloud4 {
   background: url(../assets/cloud4.png) no-repeat;
@@ -161,18 +159,27 @@ export default {
 }
 .pr-title {
   width: auto;
-  height: 580px;
+  height: 530px;
   position: relative;
   padding: 25px;
   background: #eebbc3;
   transition: 0.4s 0.2s ease-in-out;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .pr-wrap > p {
   font-size: 18px;
   font-weight: bold;
 }
-.pr-title.active {
+.active {
+  transform: translateY(-460px);
+}
+.imgtab:hover ~ .pr-title {
+  transform: translateY(-460px);
+}
+.pr-title:hover {
   transform: translateY(-460px);
 }
 .pr-icon {
@@ -186,6 +193,9 @@ export default {
 }
 .pr-text {
   text-align: start;
+}
+.pr-text > h3 {
+  padding-bottom: 10px;
 }
 .make-time {
   padding: 10px 0 20px;
@@ -216,7 +226,10 @@ export default {
     width: 325px;
   }
   .pr-list > li {
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
+  }
+  .pr-title {
+    pointer-events: none;
   }
 }
 @media only screen and (max-width: 375px) {
