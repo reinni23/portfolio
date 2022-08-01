@@ -1,45 +1,52 @@
 <template>
-  <div class="modal">
-    <router-link to="/"
-      ><div class="overlay" @click="hiltonView = true"></div>
-    </router-link>
-    <div class="hilton-card"></div>
-  </div>
+  <router-link to="/">
+    <div class="modal">
+      <div class="mock-bg" @click="hiltonView = true">
+        <img :src="hiltonmockup" />
+      </div>
+    </div>
+  </router-link>
 </template>
 
 <script>
 export default {
   name: "app",
   hiltonView: false,
+  data() {
+    return {
+      hiltonmockup: require("../assets/hiltonmockup.png"),
+    };
+  },
 };
 </script>
 
 <style scoped>
-.modal,
-.overlay {
-  position: fixed;
-  display: block;
+body {
+  margin: 0;
+}
+div {
+  box-sizing: border-box;
+}
+.modal {
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  padding: 30px;
   z-index: 200;
 }
-.overlay {
-  opacity: 0.5;
-  background-color: black;
-}
-.hilton-card {
-  width: 75%;
+.mock-bg {
+  transform: translate(0.8);
+  width: 100%;
   height: 100%;
-  background: url(../assets/hiltonmockup.png) no-repeat;
-  background-size: cover;
-  z-index: 200;
-  margin: auto;
+  overflow-x: hidden;
 }
-@media only screen and (max-width: 768px) {
-  .hilton-card {
-    transform: scale(0.8);
-  }
+.mock-bg > img {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  display: block;
 }
 </style>

@@ -208,9 +208,6 @@ export default {
   .clone-list > li {
     margin: 0 auto 40px;
   }
-  .clone-title {
-    pointer-events: none;
-  }
 }
 @media only screen and (max-width: 375px) {
   .clone-wrap > p {

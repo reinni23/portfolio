@@ -194,6 +194,7 @@ export default {
 .pr-text {
   text-align: start;
 }
+
 .pr-text > h3 {
   padding-bottom: 10px;
 }
@@ -219,6 +220,9 @@ export default {
   }
 }
 @media only screen and (max-width: 768px) {
+  .project > p {
+    padding-bottom: 50px;
+  }
   .pr-list {
     flex-direction: column;
   }
@@ -227,9 +231,6 @@ export default {
   }
   .pr-list > li {
     margin: 0 auto 40px;
-  }
-  .pr-title {
-    pointer-events: none;
   }
 }
 @media only screen and (max-width: 375px) {
