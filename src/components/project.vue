@@ -1,4 +1,3 @@
-0
 <template>
   <div class="project backimg">
     <p>Project</p>

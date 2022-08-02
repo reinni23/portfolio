@@ -50,7 +50,7 @@ export default {
         {
           imgurl: require("../assets/flowerhouse.png"),
           title: "싱그러운집",
-          text: "메인페이지와 커뮤니티 페이지를 작업하였습니다. 싱그러운집 클론을 통해 Swiper의 사용법과 HTML/CSS의 기초를 다졌습니다.",
+          text: "메인페이지와 커뮤니티 페이지를 작업하였습니다. 싱그러운집 클론을 통해 반응형(미디어쿼리)의 사용법과 Swiper의 사용법, 그리고 HTML/CSS의 기초를 다졌습니다.",
           time: "22. 2 ~ 22. 4",
           lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
           page: "https://reinni23-flowerhouse.netlify.app/",
@@ -61,7 +61,7 @@ export default {
         {
           imgurl: require("../assets/dcaf.png"),
           title: "대전문화회관",
-          text: "메인페이지와 문화 문화예술공간-대전무형문화재 전수회관 페이지를 클론했습니다. HTML/CSS와 JS, jQuery를 공부하였습니다.",
+          text: "메인페이지와 문화 문화예술공간-대전무형문화재 전수회관 페이지를 클론했습니다. HTML/CSS, JavaScript의 다양한 사용법과 jQuery의 사용법을 공부하였습니다.",
           time: "22. 4 ~ 22. 5",
           lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
           page: "https://reinni23-dcaf.netlify.app/",
@@ -72,7 +72,7 @@ export default {
         {
           imgurl: require("../assets/pollexzone.png"),
           title: "POLLEXZONE",
-          text: "메인페이지와 회사소개 페이지를 클론했습니다. CSS의 동적 움직임과 JS를 이용한 메뉴 변환을 익혔습니다.",
+          text: "메인페이지와 회사소개 페이지를 클론했습니다. CSS의 동적 움직임과 JS를 이용한 메뉴 변환을 익혔습니다. 또한 JavaScript의 라이브러리 사용법을 익혔습니다.",
           time: "22. 5 ~ 22. 6",
           lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
           page: "https://reinni23-pollexzone.netlify.app",
@@ -128,7 +128,7 @@ export default {
 .imgtab {
   width: 100%;
   height: 460px;
-  transition: 0.4s 0.2s ease-in-out;
+  background-size: auto;
 }
 .clone-title {
   width: auto;
