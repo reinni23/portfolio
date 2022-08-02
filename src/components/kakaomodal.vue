@@ -40,6 +40,7 @@ export default {
 @media only screen and (max-width: 768px) {
   .kakao-card > img {
     transform: scale(0.8);
+    top: 160px;
   }
 }
 </style>
