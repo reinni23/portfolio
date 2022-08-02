@@ -66,7 +66,7 @@ export default {
             { id: "mySql" },
           ],
           page: "https://www.naver.com",
-          mockup: "https://www.naver.com",
+          mockup: "/seomunmodal",
           github: "https://www.naver.com",
           imgtab: require("../assets/openpage.png"),
           imgmockup: require("../assets/device_icon.png"),

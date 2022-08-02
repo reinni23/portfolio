@@ -41,6 +41,8 @@
   <about id="about"></about>
   <webclone id="webclone"></webclone>
   <project id="project"></project>
+  <seomunmodal id="seomun" v-if="seomunView" @close-modal="seomunView = false">
+  </seomunmodal>
   <hiltonmodal
     id="hilton"
     v-if="hiltonView"
@@ -63,11 +65,13 @@ import project from "./components/project.vue";
 import contact from "./components/contact.vue";
 import kakaomodal from "./components/kakaomodal.vue";
 import hiltonmodal from "./components/hiltonmodal.vue";
+import seomunmodal from "./components/seomunmodal.vue";
 
 export default {
   name: "app",
   data() {
     return {
+      seomunView: false,
       hiltonView: false,
       kakaoView: false,
       popup: false,
@@ -115,6 +119,7 @@ export default {
     webclone,
     project,
     contact,
+    seomunmodal,
     kakaomodal,
     hiltonmodal,
   },

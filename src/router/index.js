@@ -6,6 +6,7 @@ import project from "../components/project.vue";
 import contact from "../components/contact.vue";
 import kakaomodal from "../components/kakaomodal.vue";
 import hiltonmodal from "../components/hiltonmodal.vue";
+import seomunmodal from "../components/seomunmodal.vue";
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: "/hiltonmodal",
     name: "hiltonm",
     component: hiltonmodal,
+  },
+  {
+    path: "/seomunmodal",
+    name: "seomunm",
+    component: seomunmodal,
   },
 ];
 
