@@ -65,9 +65,9 @@ export default {
             { id: "Node.js" },
             { id: "mySql" },
           ],
-          page: "https://www.naver.com",
+          page: "https://seomuntest23.herokuapp.com",
           mockup: "/seomunmodal",
-          github: "https://www.naver.com",
+          github: "https://github.com/reinni23/seomun",
           imgtab: require("../assets/openpage.png"),
           imgmockup: require("../assets/device_icon.png"),
           imggit: require("../assets/github.png"),
@@ -84,9 +84,9 @@ export default {
             { id: "Node.js" },
             { id: "mySql" },
           ],
-          page: "https://www.naver.com",
+          page: "https://hs-hilton.herokuapp.com",
           mockup: "/hiltonmodal",
-          github: "https://www.naver.com",
+          github: "https://github.com/reinni23/hilton",
           imgtab: require("../assets/openpage.png"),
           imgmockup: require("../assets/device_icon.png"),
           imggit: require("../assets/github.png"),
@@ -176,12 +176,6 @@ export default {
 .active {
   transform: translateY(-460px);
 }
-.imgtab:hover ~ .pr-title {
-  transform: translateY(-460px);
-}
-.pr-title:hover {
-  transform: translateY(-460px);
-}
 .pr-icon {
   display: flex;
   justify-content: space-around;
@@ -213,6 +207,18 @@ export default {
   padding: 4px 6px;
   margin-bottom: 10px;
   margin-right: 5px;
+}
+@media only screen and (min-width: 768px) {
+  .imgtab:hover ~ .pr-title {
+    transform: translateY(-460px);
+  }
+  .pr-title:hover {
+    transform: translateY(-460px);
+  }
+  .pr-icon > li > a :hover {
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+  }
 }
 @media only screen and (max-width: 1000px) {
   .primg {

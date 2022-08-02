@@ -149,12 +149,6 @@ export default {
 .active {
   transform: translateY(-460px);
 }
-.imgtab:hover ~ .clone-title {
-  transform: translateY(-460px);
-}
-.clone-title:hover {
-  transform: translateY(-460px);
-}
 .clone-icon {
   display: flex;
   justify-content: space-around;
@@ -163,10 +157,6 @@ export default {
 .clone-icon img {
   width: 30px;
   height: 30px;
-}
-.clone-icon > li > a :hover {
-  transform: scale(1.2);
-  transition: 0.2s ease-in-out;
 }
 .clone-text {
   text-align: start;
@@ -189,6 +179,18 @@ export default {
   padding: 4px 6px;
   margin-bottom: 10px;
   margin-right: 5px;
+}
+@media only screen and (min-width: 768px) {
+  .imgtab:hover ~ .clone-title {
+    transform: translateY(-460px);
+  }
+  .clone-title:hover {
+    transform: translateY(-460px);
+  }
+  .clone-icon > li > a :hover {
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+  }
 }
 @media only screen and (max-width: 1000px) {
   .cloneimg {
