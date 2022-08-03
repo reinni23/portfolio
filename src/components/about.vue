@@ -135,6 +135,7 @@ export default {
   display: flex;
   justify-content: center;
   height: 100%;
+  position: relative;
 }
 .circle {
   width: 355px;
@@ -144,12 +145,15 @@ export default {
 }
 .c-left {
   position: relative;
-  left: 100px;
+  left: 180px;
   background-color: #eebbc3;
+  background-image: url(../assets/mypicture.png);
+  background-size: cover;
+  z-index: 300;
 }
 .c-right {
   position: relative;
-  right: 100px;
+  right: 110px;
   background-color: #fff;
 }
 .myletme {
@@ -200,7 +204,7 @@ export default {
   max-width: 1400px;
   margin: auto;
   color: #fff;
-  padding: 80px 0;
+  padding: 50px 0;
   z-index: 100;
   position: relative;
 }
@@ -265,6 +269,12 @@ export default {
     height: 280px;
     transition: 0.3s ease-in-out;
   }
+  .c-left {
+    left: 145px;
+  }
+  .c-right {
+    right: 75px;
+  }
   .md-light {
     padding-right: 20px;
   }
@@ -288,7 +298,7 @@ export default {
     height: 240px;
   }
   .c-left {
-    left: 80px;
+    left: 105px;
   }
   .c-right {
     right: 80px;
@@ -320,10 +330,10 @@ export default {
     height: 155px;
   }
   .c-left {
-    left: 30px;
+    left: 75px;
   }
   .c-right {
-    right: 30px;
+    right: 65px;
   }
   .myletme {
     padding: 30px 15px;
