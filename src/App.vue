@@ -14,7 +14,7 @@
         <li v-on:click="gotocontact">Contact</li>
       </ul>
     </nav>
-    <!-- <div class="night">
+    <div class="night">
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
@@ -34,7 +34,7 @@
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
-    </div> -->
+    </div>
   </div>
 
   <intro id="intro"></intro>

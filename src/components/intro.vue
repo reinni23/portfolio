@@ -6,7 +6,7 @@
       <p>방문해주셔서 감사합니다.</p>
     </div>
     <div id="update">
-      <p>Last Update : 22/07/28</p>
+      <p>Last Update : 22/08/03</p>
     </div>
     <div class="scrolldown">
       <img :src="require(`@/assets/arrow_drop_down_circle.png`)" />

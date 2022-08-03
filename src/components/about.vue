@@ -149,7 +149,7 @@ export default {
   background-color: #eebbc3;
   background-image: url(../assets/mypicture.png);
   background-size: cover;
-  z-index: 300;
+  z-index: 150;
 }
 .c-right {
   position: relative;
