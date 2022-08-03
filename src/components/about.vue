@@ -332,7 +332,7 @@ export default {
     box-sizing: border-box;
   }
   .infolist > li {
-    width: 80%;
+    width: 85%;
     height: 70px;
     padding: 0 15px 10px;
   }
