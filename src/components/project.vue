@@ -7,6 +7,8 @@
         v-for="(pr, j) in prlist"
         class="primg"
         v-on:click="setProj(j)"
+        data-aos="flip-right"
+        data-aos-duration="1000"
       >
         <img :src="pr.imgurl" class="imgtab" />
         <div class="pr-title" :class="{ active: movepr[j] }">
@@ -39,9 +41,9 @@
         </div>
       </li>
     </ul>
-    <div class="cloud4"></div>
-    <div class="cloud5"></div>
-    <div class="ufo"></div>
+    <div class="cloud4" data-aos="fade-down" data-aos-duration="800"></div>
+    <div class="cloud5" data-aos="fade-left" data-aos-duration="800"></div>
+    <div class="ufo" data-aos="fade-right" data-aos-duration="800"></div>
   </div>
 </template>
 

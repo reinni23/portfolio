@@ -66,8 +66,12 @@ import contact from "./components/contact.vue";
 import kakaomodal from "./components/kakaomodal.vue";
 import hiltonmodal from "./components/hiltonmodal.vue";
 import seomunmodal from "./components/seomunmodal.vue";
+import AOS from 'aos';
 
 export default {
+  created() {
+    AOS.init();
+  },
   name: "app",
   data() {
     return {

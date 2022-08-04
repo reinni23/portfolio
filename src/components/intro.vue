@@ -1,12 +1,12 @@
 <template>
   <div id="intro">
     <div class="letme">
-      <p>프론트엔드 개발자를 지향하는</p>
-      <p>신호승입니다.</p>
-      <p>방문해주셔서 감사합니다.</p>
+      <p data-aos="fade-up" data-aos-duration="1000">프론트엔드 개발자를 지향하는</p>
+      <p data-aos="fade-up" data-aos-duration="1500">신호승입니다.</p>
+      <p data-aos="fade-up" data-aos-duration="2000">방문해주셔서 감사합니다.</p>
     </div>
     <div id="update">
-      <p>Last Update : 22/08/03</p>
+      <p data-aos="fade-up" data-aos-duration="1000">Last Update : 22/08/04</p>
     </div>
     <div class="scrolldown">
       <img :src="require(`@/assets/arrow_drop_down_circle.png`)" />

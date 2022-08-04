@@ -1,12 +1,13 @@
 <template>
   <div class="clone backimg">
-    <p>Web Clone</p>
+    <p data-aos="fade-up" data-aos-duration="1000">Web Clone</p>
     <ul class="clone-list">
       <li
         :key="i"
         v-for="(clone, i) in clonelist"
         class="cloneimg"
         v-on:click="setImg(i)"
+        data-aos="flip-right" data-aos-duration="1000"
       >
         <img :src="clone.imgurl" class="imgtab" />
         <div class="clone-title" :class="{ active: movecl[i] }">
@@ -37,7 +38,7 @@
         </div>
       </li>
     </ul>
-    <div class="cloud3"></div>
+    <div class="cloud3" data-aos="fade-right" data-aos-duration="800"></div>
   </div>
 </template>
 <script>

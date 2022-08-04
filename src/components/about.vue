@@ -1,11 +1,11 @@
 <template>
   <div class="aboutme backimg">
-    <p>ABOUT ME</p>
+    <p data-aos="fade-up" data-aos-duration="1000">ABOUT ME</p>
     <div class="mypicture">
-      <div class="circle c-left"></div>
-      <div class="circle c-right"></div>
+      <div class="circle c-left" data-aos="flip-right" data-aos-duration="1000"></div>
+      <div class="circle c-right" data-aos="flip-right" data-aos-duration="1000"></div>
     </div>
-    <div class="myletme">
+    <div class="myletme" data-aos="fade-up" data-aos-duration="1000">
       <h2>꿈꾸는 개발자가 되고싶습니다.</h2>
       <p>
         물류전산, 유튜버 편집등 다양한 경험을 하다 개발자 친구들의 권유로 코딩을
@@ -15,7 +15,7 @@
     </div>
     <div>
       <ul class="infolist">
-        <li :key="i" v-for="(info, i) in infopage">
+        <li :key="i" v-for="(info, i) in infopage" data-aos="fade-up" data-aos-duration="1000">
           <span class="material-icons md-light">
             {{ info.icon }}
           </span>
@@ -29,8 +29,8 @@
       </ul>
     </div>
     <div class="myskills">
-      <p>Skills</p>
-      <ul>
+      <p data-aos="fade-up" data-aos-duration="1000">Skills</p>
+      <ul data-aos="fade-down" data-aos-duration="1000">
         <li :key="line" v-for="(skill, line) in skillper">
           <p class="skill-title">{{ skill.title }}</p>
           <div class="skill-graph">
@@ -41,10 +41,10 @@
         </li>
       </ul>
     </div>
-    <div class="cloud1"></div>
-    <div class="cloud2"></div>
-    <div class="rocket"></div>
-    <div class="jupiter"></div>
+    <div class="cloud1" data-aos="fade-right" data-aos-duration="800"></div>
+    <div class="cloud2" data-aos="fade-left" data-aos-duration="800"></div>
+    <div class="rocket" data-aos="fade-up" data-aos-duration="800"></div>
+    <div class="jupiter" data-aos="fade-left" data-aos-duration="1000"></div>
   </div>
 </template>
 

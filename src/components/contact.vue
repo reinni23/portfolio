@@ -1,31 +1,31 @@
 <template>
   <div id="#contact">
     <div class="contact-wrap">
-      <p>Contact</p>
+      <p data-aos="fade-up" data-aos-duration="1000">Contact</p>
       <div class="contact-info">
         <ul class="contact-icon" :key="clist" v-for="(cont, clist) in contlist">
-          <li class="github">
+          <li class="github" data-aos="fade-up" data-aos-duration="1000">
             <a :href="cont.github" target="_blank"
               ><img :src="cont.imggit"
             /></a>
           </li>
-          <li class="insta">
+          <li class="insta" data-aos="fade-up" data-aos-duration="1000">
             <a :href="cont.insta" target="_blank"
               ><img :src="cont.imginsta"
             /></a>
           </li>
-          <li class="email">
+          <li class="email" data-aos="fade-up" data-aos-duration="1000">
             <a :href="cont.email"><img :src="cont.imgemail" /></a>
           </li>
-          <li class="kakao">
+          <li class="kakao" data-aos="fade-up" data-aos-duration="1000">
             <router-link to="/kakaomodal">
               <a> <img :src="cont.imgkakao" /> </a
             ></router-link>
           </li>
         </ul>
         <div class="contact-detail">
-          <p>Tel. 010-3684-6218</p>
-          <p>Email : reinni@naver.com</p>
+          <p data-aos="fade-up" data-aos-duration="1000">Tel. 010-3684-6218</p>
+          <p data-aos="fade-up" data-aos-duration="1400">Email : reinni@naver.com</p>
         </div>
       </div>
     </div>

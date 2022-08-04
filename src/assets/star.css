@@ -264,8 +264,8 @@
   .shooting_star:nth-child(20)::before,
   .shooting_star:nth-child(20)::after,
   .shooting_star:nth-child(20)::after {
-    -webkit-animation-delay: 3742ms;
-    animation-delay: 3742ms;
+    -webkit-animation-delay: 3714ms;
+    animation-delay: 3714ms;
   }
   
   @-webkit-keyframes tail {
