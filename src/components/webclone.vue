@@ -51,7 +51,7 @@ export default {
         {
           imgurl: require("../assets/flowerhouse.png"),
           title: "싱그러운집",
-          text: "메인페이지와 커뮤니티 페이지를 작업하였습니다. 싱그러운집 클론을 통해 반응형(미디어쿼리)의 사용법과 Swiper의 사용법, 그리고 HTML/CSS의 기초를 다졌습니다.",
+          text: "메인페이지와 커뮤니티 페이지를 작업하였습니다. 싱그러운집 클론을 통해 반응형(미디어쿼리)의 이해와 Swiper의 사용법, 그리고 HTML/CSS의 기초를 다졌습니다.",
           time: "22. 2 ~ 22. 4",
           lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
           page: "https://reinni23-flowerhouse.netlify.app/",
@@ -62,7 +62,7 @@ export default {
         {
           imgurl: require("../assets/dcaf.png"),
           title: "대전문화회관",
-          text: "메인페이지와 문화 문화예술공간-대전무형문화재 전수회관 페이지를 클론했습니다. HTML/CSS, JavaScript의 다양한 사용법과 jQuery의 사용법을 공부하였습니다.",
+          text: "메인페이지 및 문화예술공간-대전무형문화재 전수회관 페이지를 클론했습니다. HTML/CSS, JavaScript의 기본적인 사용법과 jQuery의 사용법을 익혔습니다.",
           time: "22. 4 ~ 22. 5",
           lang: [{ id: "HTML/CSS" }, { id: "JavaScript" }, { id: "jQuery" }],
           page: "https://reinni23-dcaf.netlify.app/",
