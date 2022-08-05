@@ -89,7 +89,7 @@ export default {
           imgurl: require("../assets/hilton.png"),
           title: "힐튼 서울 호텔",
           text: "팀프로젝트 작업으로 해당 객실 및 객실 상세페이지 및 공지사항 일부를 작업했습니다. 공지사항은 mySql을 Heroku 연결을 통해 연동해두었으며 실시간으로 작성 및 보관할 수 있습니다. 또한 공지사항의 탭 구분에 따라 확인할 수 있게 했습니다. 해당 프로젝트의 25%정도를 기여했습니다.",
-          time: "22.5 ~ 22.6",
+          time: "22.5 ~ 22.7",
           lang: [
             { id: "HTML/CSS" },
             { id: "JavaScript" },
