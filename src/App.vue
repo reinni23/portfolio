@@ -1,20 +1,25 @@
 <template>
   <div id="main">
-    <nav class="navbar" :class="{ active: popup }">
-      <div class="nav-burger" v-on:click="navBurger" :class="{ active: popup }">
+    <nav class="navbar" id="navbar" :class="{ active: popup }">
+      <div
+        class="nav-burger"
+        id="navburger"
+        v-on:click="navBurger"
+        :class="{ active: popup }"
+      >
         <span></span>
         <span></span>
         <span></span>
       </div>
       <p v-on:click="gotointro">HS</p>
-      <ul class="nav-menu" :class="{ active: popup }">
+      <ul class="nav-menu" id="navmenu" :class="{ active: popup }">
         <li v-on:click="gotoabout">ABOUT ME</li>
         <li v-on:click="gotowcl">Web Clone</li>
         <li v-on:click="gotopr">Project</li>
         <li v-on:click="gotocontact">Contact</li>
       </ul>
     </nav>
-    <div class="night">
+    <!-- <div class="night">
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
@@ -34,7 +39,7 @@
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
       <div class="shooting_star"></div>
-    </div>
+    </div> -->
   </div>
 
   <intro id="intro"></intro>
@@ -66,7 +71,7 @@ import contact from "./components/contact.vue";
 import kakaomodal from "./components/kakaomodal.vue";
 import hiltonmodal from "./components/hiltonmodal.vue";
 import seomunmodal from "./components/seomunmodal.vue";
-import AOS from 'aos';
+import AOS from "aos";
 
 export default {
   created() {
@@ -90,30 +95,45 @@ export default {
       const intro = document.getElementById("intro");
       if (intro) {
         intro.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("navbar").classList.remove("active");
+        document.getElementById("navburger").classList.remove("active");
+        document.getElementById("navmenu").classList.remove("active");
       }
     },
     gotoabout() {
       const about = document.getElementById("about");
       if (about) {
         about.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("navbar").classList.remove("active");
+        document.getElementById("navburger").classList.remove("active");
+        document.getElementById("navmenu").classList.remove("active");
       }
     },
     gotowcl() {
       const clone = document.getElementById("webclone");
       if (clone) {
         clone.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("navbar").classList.remove("active");
+        document.getElementById("navburger").classList.remove("active");
+        document.getElementById("navmenu").classList.remove("active");
       }
     },
     gotopr() {
       const project = document.getElementById("project");
       if (project) {
         project.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("navbar").classList.remove("active");
+        document.getElementById("navburger").classList.remove("active");
+        document.getElementById("navmenu").classList.remove("active");
       }
     },
     gotocontact() {
       const contact = document.getElementById("contact");
       if (contact) {
         contact.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("navbar").classList.remove("active");
+        document.getElementById("navburger").classList.remove("active");
+        document.getElementById("navmenu").classList.remove("active");
       }
     },
   },

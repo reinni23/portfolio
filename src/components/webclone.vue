@@ -7,7 +7,8 @@
         v-for="(clone, i) in clonelist"
         class="cloneimg"
         v-on:click="setImg(i)"
-        data-aos="flip-right" data-aos-duration="1000"
+        data-aos="flip-right"
+        data-aos-duration="1200"
       >
         <img :src="clone.imgurl" class="imgtab" />
         <div class="clone-title" :class="{ active: movecl[i] }">
@@ -38,7 +39,11 @@
         </div>
       </li>
     </ul>
-    <div class="cloud3" data-aos="fade-right" data-aos-duration="800"></div>
+    <div
+      class="cloud3 bg-size"
+      data-aos="fade-right"
+      data-aos-duration="800"
+    ></div>
   </div>
 </template>
 <script>
@@ -107,7 +112,7 @@ export default {
   overflow: hidden;
 }
 .clone > p {
-  padding-bottom: 80px;
+  padding: 50px 0 100px;
 }
 .clone-list {
   position: relative;
@@ -210,6 +215,12 @@ export default {
   }
   .clone-list > li {
     margin: 0 auto 40px;
+  }
+  .bg-size {
+    transform: scale(0.6) !important;
+  }
+  .cloud3 {
+    left: 40%;
   }
 }
 @media only screen and (max-width: 375px) {

@@ -66,7 +66,7 @@ export default { name: "app" };
 }
 @media only screen and (max-width: 375px) {
   .letme {
-    height: 650px;
+    height: 600px;
   }
   .letme > p {
     font-size: 16px;

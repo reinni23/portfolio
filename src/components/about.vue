@@ -2,8 +2,16 @@
   <div class="aboutme backimg">
     <p data-aos="fade-up" data-aos-duration="1000">ABOUT ME</p>
     <div class="mypicture">
-      <div class="circle c-left" data-aos="flip-right" data-aos-duration="1000"></div>
-      <div class="circle c-right" data-aos="flip-right" data-aos-duration="1000"></div>
+      <div
+        class="circle c-left"
+        data-aos="flip-right"
+        data-aos-duration="1000"
+      ></div>
+      <div
+        class="circle c-right"
+        data-aos="flip-right"
+        data-aos-duration="1000"
+      ></div>
     </div>
     <div class="myletme" data-aos="fade-up" data-aos-duration="1000">
       <h2>꿈꾸는 개발자가 되고싶습니다.</h2>
@@ -15,7 +23,12 @@
     </div>
     <div>
       <ul class="infolist">
-        <li :key="i" v-for="(info, i) in infopage" data-aos="fade-up" data-aos-duration="1000">
+        <li
+          :key="i"
+          v-for="(info, i) in infopage"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <span class="material-icons md-light">
             {{ info.icon }}
           </span>
@@ -41,10 +54,26 @@
         </li>
       </ul>
     </div>
-    <div class="cloud1" data-aos="fade-right" data-aos-duration="800"></div>
-    <div class="cloud2" data-aos="fade-left" data-aos-duration="800"></div>
-    <div class="rocket" data-aos="fade-up" data-aos-duration="800"></div>
-    <div class="jupiter" data-aos="fade-left" data-aos-duration="1000"></div>
+    <div
+      class="cloud1 bg-size"
+      data-aos="fade-right"
+      data-aos-duration="800"
+    ></div>
+    <div
+      class="cloud2 bg-size"
+      data-aos="fade-left"
+      data-aos-duration="800"
+    ></div>
+    <div
+      class="rocket bg-size"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    ></div>
+    <div
+      class="jupiter bg-size"
+      data-aos="fade-left"
+      data-aos-duration="1000"
+    ></div>
   </div>
 </template>
 
@@ -248,21 +277,8 @@ export default {
   border-radius: 5px;
 }
 @media only screen and (max-width: 1200px) {
-  .cloud1 {
-    transform: scale(0.6);
-    transition: 0.3s ease-in-out;
-  }
-  .cloud2 {
-    transform: scale(0.6);
-    transition: 0.3s ease-in-out;
-  }
-  .rocket {
-    transform: scale(0.6);
-    transition: 0.3s ease-in-out;
-  }
-  .jupiter {
-    transform: scale(0.6);
-    transition: 0.3s ease-in-out;
+  .bg-size {
+    transform: scale(0.6) !important;
   }
   .circle {
     width: 280px;
@@ -280,18 +296,11 @@ export default {
   }
 }
 @media only screen and (max-width: 768px) {
-  .cloud1 {
-    transform: scale(0.5);
-  }
-  .cloud2 {
-    transform: scale(0.5);
-  }
   .rocket {
-    transform: scale(0.5);
-    top: 1095px;
+    top: 1190px;
   }
-  .jupiter {
-    transform: scale(0.5);
+  .bg-size {
+    transform: scale(0.5) !important;
   }
   .circle {
     width: 240px;

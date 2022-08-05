@@ -8,7 +8,7 @@
         class="primg"
         v-on:click="setProj(j)"
         data-aos="flip-right"
-        data-aos-duration="1000"
+        data-aos-duration="1200"
       >
         <img :src="pr.imgurl" class="imgtab" />
         <div class="pr-title" :class="{ active: movepr[j] }">
@@ -41,9 +41,21 @@
         </div>
       </li>
     </ul>
-    <div class="cloud4" data-aos="fade-down" data-aos-duration="800"></div>
-    <div class="cloud5" data-aos="fade-left" data-aos-duration="800"></div>
-    <div class="ufo" data-aos="fade-right" data-aos-duration="800"></div>
+    <div
+      class="cloud4 bg-size"
+      data-aos="fade-down"
+      data-aos-duration="800"
+    ></div>
+    <div
+      class="cloud5 bg-size"
+      data-aos="fade-left"
+      data-aos-duration="800"
+    ></div>
+    <div
+      class="ufo bg-size"
+      data-aos="fade-right"
+      data-aos-duration="800"
+    ></div>
   </div>
 </template>
 
@@ -110,14 +122,14 @@ export default {
   overflow: hidden;
 }
 .project > p {
-  padding: 50px 0 50px;
+  padding: 100px 0;
 }
 .cloud4 {
   background: url(../assets/cloud4.png) no-repeat;
   position: absolute;
   width: 650px;
-  height: 200px;
-  left: 85px;
+  height: 220px;
+  left: -400px;
   top: 400px;
 }
 .cloud5 {
@@ -125,7 +137,7 @@ export default {
   position: absolute;
   width: 650px;
   height: 200px;
-  left: 1120px;
+  left: 80%;
   top: 50px;
 }
 .ufo {
@@ -238,6 +250,18 @@ export default {
   }
   .pr-list > li {
     margin: 0 auto 40px;
+  }
+  .cloud4 {
+    left: -300px;
+    top: 450px;
+  }
+  .cloud5 {
+    left: 33%;
+    top: 800px;
+  }
+
+  .bg-size {
+    transform: scale(0.6) !important;
   }
 }
 @media only screen and (max-width: 375px) {

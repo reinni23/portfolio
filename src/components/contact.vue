@@ -25,7 +25,9 @@
         </ul>
         <div class="contact-detail">
           <p data-aos="fade-up" data-aos-duration="1000">Tel. 010-3684-6218</p>
-          <p data-aos="fade-up" data-aos-duration="1400">Email : reinni@naver.com</p>
+          <p data-aos="fade-up" data-aos-duration="1400">
+            Email : reinni@naver.com
+          </p>
         </div>
       </div>
     </div>
@@ -68,7 +70,7 @@ export default {
   color: white;
   font-size: 36px;
   font-weight: bold;
-  padding: 80px 0 120px;
+  padding: 25% 0 30px;
 }
 .contact-info {
   text-align: center;
@@ -93,13 +95,16 @@ export default {
   font-size: 16px;
   max-width: 1440px;
   margin: auto;
-  padding-bottom: 20%;
+  padding-bottom: 300px;
 }
 .contact-detail > p {
   padding-bottom: 10px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
+  .contact-wrap {
+    padding: 50% 0 50px;
+  }
   .contact-wrap > p {
     font-size: 28px;
   }
@@ -108,6 +113,9 @@ export default {
   }
 }
 @media only screen and (max-width: 375px) {
+    .contact-wrap {
+    padding: 25% 0 50px;
+  }
   .contact-wrap > p {
     font-size: 24px;
   }
@@ -117,6 +125,9 @@ export default {
   .contact-icon img {
     width: 25px;
     height: 25px;
+  }
+  .contact-detail {
+    padding-bottom: 100px;
   }
 }
 </style>
