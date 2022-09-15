@@ -6,7 +6,7 @@
       <p data-aos="fade-up" data-aos-duration="2000">방문해주셔서 감사합니다.</p>
     </div>
     <div id="update">
-      <p data-aos="fade-up" data-aos-duration="1000">Last Update : 22/08/04</p>
+      <p data-aos="fade-up" data-aos-duration="1000">Last Update : 22/09/15</p>
     </div>
     <div class="scrolldown">
       <img :src="require(`@/assets/arrow_drop_down_circle.png`)" />
